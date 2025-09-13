@@ -9,6 +9,8 @@ def getlist(fname: str) -> list[tuple[str, str]]:
 	l = list(filter(None, l))
 	f.close()
 	for item in l:
+		if item.lstrip(' \t').startswith('#'):
+			continue
 		t = item.split(' ', 1)
 		# allows using $ as a placeholder for input filename
 		t[1] = t[1].replace('$', t[0])
