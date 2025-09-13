@@ -25,7 +25,7 @@ def main(args: list[str]) -> int:
 	for d in dirs:
 		makedirs(d, exist_ok=True)
 	for i in itms:
-		copy2(i[0], i[1], True)
+		copy2(i[0], i[1], follow_symlinks=True)
 	return 0
 
 if __name__ == '__main__':
